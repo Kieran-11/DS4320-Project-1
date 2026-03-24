@@ -1,7 +1,7 @@
 # DS 4320 Project 1: NFL Combine Performance as a Predictor for Career Value
 
 
-'''mermaid
+```mermaid
 erDiagram
     PLAYERS ||--o{ COMBINE_STATS : completes
     PLAYERS ||--o{ PRO_PERFORMANCE : achieves
@@ -43,4 +43,4 @@ erDiagram
         int pick_number
         string nfl_team
     }
-    '''
+    ```
