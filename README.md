@@ -44,4 +44,4 @@ erDiagram
         string nfl_team
     }
 
-    ```
+```
