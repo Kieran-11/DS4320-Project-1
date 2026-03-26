@@ -3,7 +3,7 @@
 
 ```mermaid
 erDiagram
-    PLAYERS ||--o{ COMBINE_STATS : completes
+    PLAYERS ||--|| COMBINE_STATS : completes
     PLAYERS ||--o{ PRO_PERFORMANCE : achieves
     PLAYERS }o--|| POSITION_GROUPS : belongs_to
 
