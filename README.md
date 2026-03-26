@@ -5,43 +5,38 @@
 erDiagram
     PLAYERS ||--o{ COMBINE_STATS : completes
     PLAYERS ||--o{ PRO_PERFORMANCE : achieves
-    PLAYERS ||--|| DRAFT_DETAILS : assigned_to
+    PLAYERS }o--|| POSITION_GROUPS : belongs_to
 
     PLAYERS {
         string player_id PK
         string name
-        string position
+        string position FK
         string college
-        float height_inches
-        float weight_lbs
+        float height
+        float weight
     }
 
     COMBINE_STATS {
-        string combine_id PK
         string player_id FK
         float forty_yd_dash
         float vertical_jump
-        int bench_press_reps
-        float broad_jump_inches
-        float three_cone_drill
+        int bench_press
+        float broad_jump
+        float three_cone
+        float shuttle_run
     }
 
     PRO_PERFORMANCE {
-        string performance_id PK
         string player_id FK
-        int season_year
-        float cav "Career Approximate Value"
-        int games_played
-        int games_started
+        float career_av
+        int draft_round
+        int overall_pick
     }
 
-    DRAFT_DETAILS {
-        string draft_id PK
-        string player_id FK
-        int draft_year
-        int round
-        int pick_number
-        string nfl_team
+    POSITION_GROUPS {
+        string position PK
+        string group_name
+        float target_40_dash
     }
 
 ```
