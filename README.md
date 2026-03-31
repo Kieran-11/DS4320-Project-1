@@ -11,7 +11,7 @@ Kieran Perdue
 ### NetID: 
 rrx5eg
 ### DOI: 
-[Insert DOI Link from Zenodo here]
+[10.5281/zenodo.19361124](https://doi.org/10.5281/zenodo.19361124)
 ### Press Release: 
 [press_release.md](./press_release.md)
 ### Data: 
