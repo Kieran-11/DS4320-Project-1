@@ -173,7 +173,7 @@ To separate the signal from the noise, we developed a data pipeline that compare
 
 ## The Chart: Predictive Limits and the Rare Elite Outlier
 
-*(Insert your Random Forest Visualization Image Here using `![Alt Text](./path_to_image.png)`)*
+![Random Forest CAV Prediction Model](./CombineViz.png)
 
 As seen in the visualization above, the data overwhelmingly clusters together, showing just how difficult it is to predict a player's career value based solely on their Combine performance. However, there is one fascinating exception. At the absolute extreme top-end of our Random Forest model, 4 out of the 5 players projected to achieve a massive career value (a CAV greater than 50) actually went on to achieve it. While this suggests that truly generational, one-of-one athletic profiles might be easier to spot, it represents an incredibly tiny sample size. This cluster of elite outliers is a statistical anomaly to take note of, but definitely not a definitive rule to build a scouting department around.
 
