@@ -40,10 +40,11 @@ The motivation is to provide front-office scouts with a data-driven "Value Index
 
 ### Headline 
 
-[put headline here later]
-[put anchor link here later]
+The NFL Combine is a Spectacle, Not a Crystal Ball: Why Athletic Metrics Don't Guarantee GridironGreatness
+[Link](./press_release.md)
 
 ## Domain Exposition
+This project operates within the domain of **Advanced Sports Analytics and Talent Valuation**. Specifically, it explores the intersection of biometric performance data (NFL Combine results) and long-term professional econometrics (Career Approximate Value). For decades, NFL talent evaluation has relied heavily on  isolated athletic testing. This project applies predictive modeling and relational database management to this domain, aiming to replace subjective "gut feelings" with objective, data-driven frameworks that can accurately quantify a prospect's future value for a professional franchise.
 
 ## Terminology
 
@@ -95,6 +96,10 @@ Survivor Bias: Players who appear in the performance table are those who actuall
 ### Mitigation: 
 
 We mitigate this by including a POSITION_GROUPS reference table to normalize athletic scores against positional averages rather than the entire population.
+
+### Rationale for Critical Decisions & Uncertainty Management
+
+To transform raw NFL Combine data into an actionable predictive model, several critical judgement calls were made regarding data structuring and analysis. First, we chose Career Approximate Value (CAV) as the dependent variable rather than Draft Position because draft position measures a team's expectation of a player—which is inherently biased by Combine hype—whereas CAV measures actual, realized professional production. Because CAV is a proprietary, subjective index, it introduces some uncertainty; to mitigate this, we explicitly noted a +/- 1.5 margin of error in our Data Dictionary. Second, we addressed incomplete Combine profiles by strictly filtering our training data to only include complete profiles rather than mathematically imputing missing metrics, ensuring our model identifies correlations based entirely on proven measurements rather than synthetic data. Finally, we selected a Random Forest algorithm because athleticism does not scale linearly, and this model naturally handles non-linear thresholds and complex interactions while remaining robust to extreme athletic outliers that might otherwise skew baseline predictions.
 
 ## Metadata
 
@@ -150,13 +155,25 @@ erDiagram
 
 ### Data Dictionary
 
-| Table | Feature | Type | Description | Uncertainty |
-|---|---|---|---|---|
-| COMBINE_STATS | `forty_yd_dash` | Float | 40yd dash (sec) | +/- 0.05s (Electronic) |
-| COMBINE_STATS | `vertical_jump` | Float | Vertical leap (in) | +/- 0.5in |
-| PRO_PERFORMANCE | `career_av` | Float | Total Career Value | +/- 1.5 (Subjective index) |
-| PLAYERS | `weight` | Int | Body weight (lbs) | +/- 1.0 lb |
-
-License
-
-This project is licensed under the MIT License.
+| Table | Feature | Type | Description | Example | Uncertainty |
+|---|---|---|---|---|---|
+| PLAYERS | `player_id` | Integer | Unique surrogate key identifying each player record | 1052 | None — system generated |
+| PLAYERS | `name` | String | Full name of the NFL prospect | Calvin Johnson | None — official record |
+| PLAYERS | `position` | String | Designated roster position abbreviation | WR | None — official record |
+| PLAYERS | `college` | String | College or university the player attended | Georgia Tech | None — official record |
+| PLAYERS | `height` | Float | Player height converted to decimal inches | 77.0 | +/- 0.5 in (manual measurement) |
+| PLAYERS | `weight` | Integer | Official weigh-in weight in pounds | 239 | +/- 1.0 lb (scale accuracy) |
+| COMBINE_STATS | `player_id` | Integer | Foreign key linking to PLAYERS table | 1052 | None — system generated |
+| COMBINE_STATS | `forty_yd_dash` | Float | Time in seconds to run 40 yards from a standing start | 4.35 | +/- 0.05s (electronic timing) |
+| COMBINE_STATS | `vertical_jump` | Float | Maximum vertical leap height in inches | 38.5 | +/- 0.5 in (measurement device) |
+| COMBINE_STATS | `bench_press` | Integer | Number of reps of 225 lbs completed on bench press | 27 | +/- 1 rep (observer count) |
+| COMBINE_STATS | `broad_jump` | Float | Standing broad jump distance in inches | 130.0 | +/- 1.0 in (tape measure) |
+| COMBINE_STATS | `three_cone` | Float | Time in seconds to complete the 3-cone agility drill | 6.89 | +/- 0.05s (electronic timing) |
+| COMBINE_STATS | `shuttle_run` | Float | Time in seconds to complete the 20-yard short shuttle | 4.12 | +/- 0.05s (electronic timing) |
+| PRO_PERFORMANCE | `player_id` | Integer | Foreign key linking to PLAYERS table | 1052 | None — system generated |
+| PRO_PERFORMANCE | `career_av` | Float | Cumulative Career Approximate Value across all NFL seasons | 106.0 | +/- 1.5 (subjective index methodology) |
+| PRO_PERFORMANCE | `draft_round` | Integer | Round in which the player was selected in the NFL Draft | 1 | None — official record |
+| PRO_PERFORMANCE | `overall_pick` | Integer | Overall pick number in the NFL Draft | 2 | None — official record |
+| POSITION_GROUPS | `position` | String | Primary key — position abbreviation matching PLAYERS table | WR | None — official record |
+| POSITION_GROUPS | `group_name` | String | Broader tactical position group the position belongs to | Skill | None — defined categorization |
+| POSITION_GROUPS | `target_40_dash` | Float | Position-group benchmark 40-yard dash time used for normalization | 4.45 | +/- 0.05s (positional average) |
