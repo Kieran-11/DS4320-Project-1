@@ -1,4 +1,4 @@
-DS 4320 Project 1: NFL Combine Performance as a Predictor for Career Value
+# DS 4320 Project 1: NFL Combine Performance as a Predictor for Career Value
 
 Pipeline Notebook | Kieran | rrx5eg
 
@@ -6,13 +6,13 @@ This notebook demonstrates the full solution pipeline:
 
 Build the relational database from raw CSV files using DuckDB
 
- Query the database to prepare the analysis dataset
+Query the database to prepare the analysis dataset
 
 Implement and evaluate a predictive ML model
 
 Visualize results at publication quality
 
-Part 1: Data Preparation — Load CSVs into DuckDB
+## Part 1: Data Preparation — Load CSVs into DuckDB
 
 We use DuckDB as our in-process analytical database. Each of the four relational tables is loaded from its CSV file in the /data folder. DuckDB lets us query them with standard SQL without needing a separate database server.
 
@@ -123,7 +123,7 @@ print(f'Random Forest RMSE: {mean_squared_error(y_test, y_pred)**0.5:.2f}')
 print(f'Random Forest R²: {r2_score(y_test, y_pred):.3f}')
 
 
-Part 4: Visualizations
+## Part 4: Visualizations
 
 Feature Importance
 
@@ -158,3 +158,10 @@ Random Forest
 0.117
 
 The Random Forest outperforms Linear Regression on this task, capturing threshold effects (e.g., "fast enough") that linear models miss. The results suggest that while athleticism is a foundation, the high variance in AV highlights the impact of non-physical traits on professional success.
+
+
+## Final Conclusion
+
+The Random Forest model demonstrates that NFL Combine metrics have weak predictive power for Career Approximate Value (CAV). While extreme athletic outliers may show some predictive signal, the vast majority of players cluster in a range where performance is not well explained by combine data alone.
+
+This reinforces the conclusion that athletic testing should be used as a supplementary evaluation tool rather than a primary predictor of NFL success.
