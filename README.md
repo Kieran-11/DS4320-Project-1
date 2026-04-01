@@ -61,23 +61,21 @@ Terminology
 | **Big Skill (Position Group)** | Hybrid players who possess both blocking responsibilities and receiving skills (e.g., Tight Ends). |
 
 ## Background Readings
-**Folder** https://drive.google.com/drive/folders/1aFAPdv9FK4VBSBXO30m4cr7RYpq_7C-N?usp=drive_link 
+**Folder** [Link to Background Readings](./background_reading/)
 
 | Title | Brief Description | Link to File in Folder |
 |---|---|---|
-| **Explosive Strength and Speed as Potential Determinants of Success in Youth Figure Skating Competitions** | This study demonstrates that explosive strength and speed, measured through field tests like horizontal jumps and ice sprints, are significant predictors of competition success in youth figure skaters. This provides a basis for evaluating raw atheltic talent as a predictor of performance | [View PDF](https://drive.google.com/file/d/1KF_Xz0HvXC-BNFJrZMGD34iZxqKTXmQg/view?usp=drive_link) |
-| **Approximate Value** | Detailed documentation of the "Approximate Value" (AV) methodology, providing the framework for our dependent variable used to quantify professional contribution. | [View PDF](https://drive.google.com/file/d/1zr8w3IBZDDnYIt4wSVJuLshf6pgRwpF7/view?usp=drive_link) |
-| **Normative and limit values of speed, endurance and power tests results of young football players** | This study established standardized percentile charts for speed, power, and endurance in young male football players aged 12–16, identifying the age of 13 to 14 as a period of significant motor skill development and highlighting the value of these normative benchmarks for individualizing training and monitoring athletic progress. | [View PDF](https://drive.google.com/file/d/18RjztSUuTVU-pEg9qS1dBC2mDrkMCFd7/view?usp=drive_link) |
-| **THE NFL COMBINE: DOES IT PREDICT PERFORMANCE IN THE NATIONAL FOOTBALL LEAGUE?** | The 2008 study investigates the predictive validity of the NFL combine and concludes that most physical tests and the Wonderlic Personnel Test fail to consistently correlate with professional success for quarterbacks, wide receivers, and running backs, with the notable exception of sprint tests for running backs. | [View PDF](https://drive.google.com/file/d/1LUen5nk0WU3vVjOuorxo7VwyL39VgPh4/view?usp=drive_link) |
-| **Advancing NFL win prediction: from Pythagorean formulas to machine learning algorithms** | A technical paper demonstrating multivariate modeling techniques to aggregate multiple Combine variables into a single, actionable "Value Forecast." | [View PDF](https://drive.google.com/file/d/1pALDEpmU-k3J7suMpHtYE-uVvlnZjxqW/view?usp=drive_link) |
+| **Explosive Strength and Speed as Potential Determinants of Success in Youth Figure Skating Competitions** | This study demonstrates that explosive strength and speed, measured through field tests like horizontal jumps and ice sprints, are significant predictors of competition success in youth figure skaters. This provides a basis for evaluating raw atheltic talent as a predictor of performance | [View PDF](./background_reading/FigureSkate.pdf) |
+| **Approximate Value** | Detailed documentation of the "Approximate Value" (AV) methodology, providing the framework for our dependent variable used to quantify professional contribution. | [View PDF](./background_reading/AV.pdf) |
+| **Normative and limit values of speed, endurance and power tests results of young football players** | This study established standardized percentile charts for speed, power, and endurance in young male football players aged 12–16, identifying the age of 13 to 14 as a period of significant motor skill development and highlighting the value of these normative benchmarks for individualizing training and monitoring athletic progress. | [View PDF](./background_reading/YouthFootball.pdf) |
+| **THE NFL COMBINE: DOES IT PREDICT PERFORMANCE IN THE NATIONAL FOOTBALL LEAGUE?** | The 2008 study investigates the predictive validity of the NFL combine and concludes that most physical tests and the Wonderlic Personnel Test fail to consistently correlate with professional success for quarterbacks, wide receivers, and running backs, with the notable exception of sprint tests for running backs. | [View PDF](./background_reading/NFL_Combine.pdf) |
+| **Advancing NFL win prediction: from Pythagorean formulas to machine learning algorithms** | A technical paper demonstrating multivariate modeling techniques to aggregate multiple Combine variables into a single, actionable "Value Forecast." | [View PDF](./background_reading/NFL_ML.pdf) |
 
 ## Data Creation
 
 ### Provenance
 
 The raw data for this project was acquired from a Kaggle dataset containing historical NFL Combine results (1999-2022) merged with professional statistics scraped from Pro-Football-Reference.
-
-### Codebase for Data Creation
 
 ### Codebase for Data Creation
 
